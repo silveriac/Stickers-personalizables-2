@@ -1,0 +1,113 @@
+:root{
+    font-family: "Indie Flower", serif;
+    font-weight: 800;
+    color: black;
+}
+@media (prefers-color-scheme: dark) {
+    :root{
+        color: black;
+    }
+}
+body{
+    background: url("./assets/paper-texture-1.jpg"), rgb(0,0,0);
+    background-size: 200%;
+    background-position: 55%;
+    height: 100vh;
+    max-width: 600px;
+    margin-inline:auto;
+    position: relative;
+}
+main{
+    height: 70%;
+    width: 85%;
+
+    /* border: 3px solid blue; */
+    margin-inline: auto;
+}
+h1{
+    width: fit-content;
+    margin-inline: auto;
+}
+p{
+    width:fit-content;
+    margin: auto;
+}
+#Design{
+    height: 85%;
+    width: 100%;
+    overflow: hidden;
+    /* position: relative; */
+}
+#Design img[src='']{
+    display: none;
+}
+#Design{
+    max-width: 750px;
+}
+#Name{
+    height: 15%;
+    font-family: "Indie Flower", serif;
+    font-weight: 800;
+    font-size: 40px;
+}
+#Options{
+    margin-top: 20px;
+    margin-inline: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+}
+#Options img{
+    width: 70px;
+}
+#random{
+    width: 80px;
+    position: absolute;
+    right: 15px;
+}
+#random{z-index: 6;}
+#mainHat{z-index: 5;}
+#mainOther{z-index: 4;}
+#mainGlasses{z-index: 3;}
+#mainOther2{z-index: 2;}
+#mainCharacter{z-index: 1;}
+
+.category img{
+    display: block;
+    margin: auto;
+}
+.modal-viewer{
+    width: 90%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    height: 60%;
+    background-color: white;
+    overflow-y: scroll;
+    scrollbar-color: black;
+    scrollbar-width: thick;
+    margin-inline: auto;
+    display: none;
+    z-index: 10;
+}
+.modal-viewer > div{
+    height: 100px;
+}
+.view{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.modal-viewer > div{
+    width: 100px;
+    overflow: hidden;
+}
+.modal-viewer img{
+    width: 100px;
+    height: 100px;
+}
+/* #GlassesModal img{
+    width: 150px;
+    height: 150px;
+} */
