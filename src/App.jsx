@@ -2,11 +2,6 @@ import './App.css';
 import { useState } from 'react';
 import data from './data.json';
 
-export default defineConfig({
-  plugins: [react()],
-  base: '/your-repo-name/', // <-- Replace with your repo name
-})
-
 function Design({showcaseImg, generateRandom}){    
     return(
         <div id="Design" className={showcaseImg.Personaje.name}>
