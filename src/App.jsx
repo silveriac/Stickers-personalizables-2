@@ -28,7 +28,7 @@ function Design({showcaseImg, generateRandom}){
     const [isVisibleAlert, setVisibilityAlert] = useState(false);
     return(
         <div id="Design" className={"showcase " + showcaseImg.Personaje.name}>
-            <div onClick={() => {generateRandom()}} id="random">
+            <div onClick={() => {generateRandom()}} id="random" className='icon'>
                 <img src="./assets/random.png" alt="random" />
             </div>
             <ShowCase category="Personaje" img={showcaseImg}/>
@@ -36,7 +36,7 @@ function Design({showcaseImg, generateRandom}){
             <ShowCase category="Lentes" img={showcaseImg}/>
             <ShowCase category="Otro1" img={showcaseImg}/>
             <ShowCase category="Otro2" img={showcaseImg}/>
-            <div  id="share" onClick={() => {share(showcaseImg)}}>
+            <div  id="share" onClick={() => {share(showcaseImg)}} className='icon'>
                 <img onClick={() => {
                         share(showcaseImg);
                         setVisibilityAlert(true);
@@ -76,44 +76,50 @@ function ShowCase({category, img}){
 
 function Modal({category, setShowcaseImg, setActiveModal}) {
     const modalRef = useRef();
-
     useEffect(() => {
         const handleClickOutside = (event) => {
-        if (modalRef.current && !modalRef.current.contains(event.target)) {
-            setActiveModal(null); // Call your close function
-        }
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                setActiveModal(null); // Call your close function
+            }
         };
-
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
         document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [setActiveModal]);
     return(
-        <div id={category}  ref={modalRef} className="modal-viewer">
+        <>
+            <div onClick={() => {setActiveModal(null)}} id="close" className='icon'>
+                <img src="./assets/close.png" alt="random" />
+            </div>
+                    <div id={category}  ref={modalRef} className="modal-viewer">
             {category != "Personaje" &&
-                <div>
+                <div className='none'>
                     <img onClick={() => {
                         setActiveModal(null);
                         console.log(setShowcaseImg);
                         setShowcaseImg([category], null)
                     }}
-                    src="./assets/none.png" alt="none" />
+                    src="./assets/none.png"
+                    alt="none" />
                 </div>
             }
             {data[category].map((element) => (
                 <Preview image={element} category={category} handleSelect={setShowcaseImg} setActiveModal={setActiveModal} />
             ))}
         </div>
+        </>
     )
 }
 
 function Preview({image, category, handleSelect, setActiveModal}) {
     return(
         <div onClick={() => {
-            handleSelect(category, image);
-            setActiveModal(null)}
-        }>
+                handleSelect(category, image);
+                setActiveModal(null)}
+            }
+            className='miniature preview'
+        >
             <img src={`./assets/${category.replace(/\d+/g, '')}/${image.src}`} alt={image.alt} />
         </div>
     )
@@ -126,10 +132,10 @@ function ModalSelector({category, showcaseImg, setActiveModal}) {
         Lentes: data.Lentes[0],
         Otro1: data.Otro1[0],
         Otro2: data.Otro2[0],
-    }) //use this to have a fallback when showCaseImg[category] is null
+    }); //use this to have a fallback when showCaseImg[category] is null
     items.current = showcaseImg[category] ? showcaseImg : items.current;
     return(
-        <div onClick={() => {setActiveModal(category)}} id={category.replace(/\d+/g, '')} className="category">
+        <div onClick={() => {setActiveModal(category)}} className={"miniature " + category}>
             <img src={`./assets/${category.replace(/\d+/g, '')}/${items.current[category].src}`} alt={items.current[category].alt} />
             <p className="cat-name">{category}</p>
         </div>
@@ -156,7 +162,7 @@ function App() {
             other1 ? other1       : null,
             other2 ? other2       : null
         ]
-    }
+    } //if there are params for some of these, we don't show the others to not alter the design
     const [activeModal, setActiveModal] = useState(null);
     const [showcaseImg, setShowcaseImg] = useState({
         Personaje: initialValues[0],

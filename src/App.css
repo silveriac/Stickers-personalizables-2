@@ -95,7 +95,7 @@ p{
     font-size: 40px;
 }
 #Options{
-    margin-top: 50px;
+    padding-top: 50px;
     margin-inline: auto;
     width: 100%;
     display: grid;
@@ -115,7 +115,7 @@ p{
     position: absolute;
     cursor: pointer;
 }
-#random img{
+.icon img{
     width: 80px;
 }
 #random:hover:after{
@@ -138,7 +138,6 @@ p{
     transform-origin: left center;
 }
 #share{
-    width: 80px;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -164,6 +163,22 @@ p{
     animation: grow-horizontal .1s .7s 1 ease-out forwards;
     transform-origin: right center;
 }
+#close{
+    position: absolute;
+    top: 130px;
+    right: 50px;
+    width: 50px;
+    height: 100px;
+    scale: none;
+    opacity: 0;
+    animation: grow .2s .5s 1 ease-in-out forwards;
+}
+#close img{
+    width: 40px;
+    height: 40px;
+}
+#close{z-index: 12;}
+.modal-viewer{z-index: 11;}
 #Options{z-index: 10;}
 .alerta-copiado{z-index: 7;}
 #share{z-index: 6;}
@@ -176,6 +191,8 @@ p{
 .showcase{
     transition: all 0.05s ease-in;
     animation: grow 0.3s 0s ease-in;
+    transform-origin: bottom;
+
 }
 .alerta-copiado{
     position: absolute;
@@ -192,17 +209,21 @@ p{
     animation: move-out .4s 2s 1 ease-in forwards;
     margin-inline: auto;
 }
-.category img{
+.miniature img{
     display: block;
     margin: auto;
 }
-.category, #random, #share{
+.miniature, #random, #share{
     cursor: pointer;
     transition: all 0.05s ease-in;
 }
-.category:hover, #random:hover, #share:hover{
+.miniature:hover, #random:hover, #share:hover, #close:hover{
     scale: 1.2;
     transition: all 0.05s ease-in;
+    cursor: pointer;
+}
+.miniature.preview:hover{
+    scale: 2;
 }
 .modal-viewer{
     width: 90%;
@@ -210,8 +231,11 @@ p{
     position: absolute;
     top: 15%;
     left: 5%;
-    height: 60%;
-    background-color: white;
+    height: 50%;
+    padding: 60px 20px 20px 0px;
+    background: url("/assets/paper-texture-3.png");
+    background-size: 120%;
+    background-position: 50% 11%;
     overflow-y: scroll;
     scrollbar-color: black;
     scrollbar-width: thick;
@@ -219,6 +243,40 @@ p{
     z-index: 10;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    animation: grow .5s 0s 1 ease-in-out;
+}
+.modal-viewer .none>img{
+    scale: none !important;
+    translate: none !important;
+    height: 80px;
+    width: 80px;
+    margin-left: 20px;
+}
+.none{
+    position: relative;
+    overflow: visible !important;
+}
+.none:hover{
+    cursor: pointer;
+}
+.none:hover::after{
+    content: "  Ninguno";
+    font-size: 25px;
+    color: black;
+    background: url("/assets/sticky-rojo.png") no-repeat;
+    background-position: 0%;
+    background-size: 100%;
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    left: 10px;
+    top: 80px;
+    display: block;
+    z-index: 1000;
+    opacity: 0;
+    rotate: -3deg;
+    animation: grow-horizontal .1s .7s 1 ease-out forwards;
+    transform-origin: left center;
 }
 .modal-viewer > div{
     height: 100px;
@@ -234,6 +292,13 @@ p{
 .modal-viewer img{
     width: 100px;
     height: 100px;
+}
+#Lentes, #Otro1, #Otro2{
+    img:not(#close){
+        scale: 1.7;
+        translate: 15px -50px;
+        transform-origin: center;
+    }
 }
 /* #GlassesModal img{
     width: 150px;
