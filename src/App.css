@@ -5,7 +5,49 @@
 }
 @media (prefers-color-scheme: dark) {
     :root{
+        font-family: "Indie Flower", serif;
+        font-weight: 800;
         color: black;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root{
+        color: black;
+    }
+}
+@media screen and (min-width: 600px) {
+    #Name{
+        position: relative;
+        top: 80px;
+    }
+}
+@keyframes grow{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes grow-horizontal{
+    0%{
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+@keyframes move-out{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(1000px);
+        opacity: 1;
     }
 }
 body{
@@ -60,31 +102,107 @@ p{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     overflow: hidden;
     position: relative;
+    height: 120px;
 }
 #Options img{
     width: 90px;
 }
 #random{
+    height: 80px;
+    width: 80px;
+    top: 15px;
+    left: 15px;
+    position: absolute;
+    cursor: pointer;
+}
+#random img{
+    width: 80px;
+}
+#random:hover:after{
+    content: "     Random";
+    font-size: 25px;
+    color: black;
+    background: url("./sticky-amarillo.png");
+    background-position: 0%;
+    background-size: 100%;
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    left: 80px;
+    top: 30px;
+    display: block;
+    z-index: 1000;
+    opacity: 0;
+    rotate: -3deg;
+    animation: grow-horizontal .1s .7s 1 ease-out forwards;
+    transform-origin: left center;
+}
+#share{
     width: 80px;
     position: absolute;
+    top: 15px;
     right: 15px;
 }
+#share img{
+    width: 80px;
+}
+#share:hover:after{
+    content: "    Compartir!";
+    font-size: 25px;
+    color: black;
+    background: url("./sticky-celeste.png");
+    background-position: 0%;
+    background-size: 100%;
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    right: 80px;
+    top: 25px;
+    display: block;
+    z-index: 1000;
+    opacity: 0;
+    animation: grow-horizontal .1s .7s 1 ease-out forwards;
+    transform-origin: right center;
+}
 #Options{z-index: 10;}
+.alerta-copiado{z-index: 7;}
+#share{z-index: 6;}
 #random{z-index: 6;}
 #mainGorro{z-index: 5;}
 #mainOtro1{z-index: 4;}
 #mainLentes{z-index: 3;}
 #mainOtro2{z-index: 2;}
 #mainPersonaje{z-index: 1;}
+.showcase{
+    transition: all 0.05s ease-in;
+    animation: grow 0.3s 0s ease-in;
+}
+.alerta-copiado{
+    position: absolute;
+    font-size: 35px;
+    background: url("./sticky-celeste.png") no-repeat;
+    background-position: 0%;
+    background-size: 100%;
+    width: 300px;
+    height: 55px;
+    padding: 15px 15px 15px 0px;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: move-out .4s 2s 1 ease-in forwards;
+    margin-inline: auto;
+}
 .category img{
     display: block;
     margin: auto;
 }
-.category{
+.category, #random, #share{
     cursor: pointer;
+    transition: all 0.05s ease-in;
 }
-.category:hover{
-    scale: 1.15;
+.category:hover, #random:hover, #share:hover{
+    scale: 1.2;
+    transition: all 0.05s ease-in;
 }
 .modal-viewer{
     width: 90%;
