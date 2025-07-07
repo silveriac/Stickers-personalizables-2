@@ -51,10 +51,13 @@
     }
 }
 body{
+    background: url("./assets/paper-texture-1.jpg"), rgb(0,0,0);
+        background-size: 200%;
+    background-position: 55%;
     background-color: rgb(90, 90, 90);
 }
 #root{
-    background: url("./assets/paper-texture-1.jpg"), rgb(0,0,0);
+    /* background: url("./assets/paper-texture-1.jpg"), rgb(0,0,0); */
     background-size: 200%;
     background-position: 55%;
     height: 100vh;
@@ -92,20 +95,24 @@ p{
     height: 15%;
     font-family: "Indie Flower", serif;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 50px;
 }
 #Options{
+    font-size: 20px;
     padding-top: 50px;
     margin-inline: auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
     overflow: hidden;
     position: relative;
-    height: 120px;
+    /* height: 120px; */
 }
 #Options img{
-    width: 90px;
+    max-width: 100px;
 }
 #random{
     height: 80px;
@@ -166,28 +173,19 @@ p{
 #close{
     position: absolute;
     top: 130px;
-    right: 50px;
+    right: 25px;
     width: 50px;
-    height: 100px;
+    height: auto;
     scale: none;
     opacity: 0;
     animation: grow .2s .5s 1 ease-in-out forwards;
 }
 #close img{
+    margin-top: 20px;
+    margin-bottom: 0;
     width: 40px;
     height: 40px;
 }
-#close{z-index: 12;}
-.modal-viewer{z-index: 11;}
-#Options{z-index: 10;}
-.alerta-copiado{z-index: 7;}
-#share{z-index: 6;}
-#random{z-index: 6;}
-#mainGorro{z-index: 5;}
-#mainOtro1{z-index: 4;}
-#mainLentes{z-index: 3;}
-#mainOtro2{z-index: 2;}
-#mainPersonaje{z-index: 1;}
 .showcase{
     transition: all 0.05s ease-in;
     animation: grow 0.3s 0s ease-in;
@@ -234,15 +232,22 @@ p{
     height: 50%;
     padding: 60px 20px 20px 0px;
     background: url("/assets/paper-texture-3.png");
+    background-attachment: scroll;
     background-size: 120%;
     background-position: 50% 11%;
+    overflow-x: visible;
     overflow-y: scroll;
+    scrollbar-color: black transparent;
     scrollbar-color: black;
     scrollbar-width: thick;
     margin-inline: auto;
     z-index: 10;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     animation: grow .5s 0s 1 ease-in-out;
 }
 .modal-viewer .none>img{
@@ -250,7 +255,11 @@ p{
     translate: none !important;
     height: 80px;
     width: 80px;
-    margin-left: 20px;
+    margin-left: 30px;
+}
+.modal-viewer:has(:hover) div:not(:hover) > img{
+    transition: all .2s;
+    filter: grayscale(60%);
 }
 .none{
     position: relative;
@@ -279,19 +288,41 @@ p{
     transform-origin: left center;
 }
 .modal-viewer > div{
-    height: 100px;
+    height: fit-content;
+    width: fit-content;
+}
+.modal-viewer > div:hover > img:not(:first-child){
+    transform: translateX(-5%);
+
+}
+.preview-tooltip{
+    visibility: hidden;
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100px;
+    font-size: 10px;
+    margin: auto;
+    width: fit-content;
+    background: url("assets/sticky-amarillo.png");
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: 40% 50%;
+}
+div:hover > .preview-tooltip{
+    visibility: visible;
 }
 .view{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .modal-viewer > div{
-    width: 100px;
     overflow: hidden;
 }
 .modal-viewer img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    aspect-ratio: 1;
 }
 #Lentes, #Otro1, #Otro2{
     img:not(#close){
@@ -300,10 +331,21 @@ p{
         transform-origin: center;
     }
 }
-/* #GlassesModal img{
-    width: 150px;
-    height: 150px;
-} */
+
+/*ACCESORIOS COORDENADAS*/
+.preview-tooltip{z-index: 21;}
+#close{z-index: 20;}
+.modal-viewer{z-index: 15;}
+#Name{z-index: 11;}
+#Options{z-index: 10;}
+.alerta-copiado{z-index: 7;}
+#share{z-index: 6;}
+#random{z-index: 6;}
+#mainGorro{z-index: 5;}
+#mainOtro1{z-index: 4;}
+#mainLentes{z-index: 3;}
+#mainOtro2{z-index: 2;}
+#mainPersonaje{z-index: 1;}
 
 /*ACCESORIOS COORDENADAS*/
 #mainGorro, #mainLentes, #mainOtro1, #mainOtro2, #mainPersonaje{

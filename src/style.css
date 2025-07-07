@@ -80,6 +80,7 @@ p{
 .modal-viewer{
     width: 90%;
     aspect-ratio: 1;
+    background: url("./assets/paper-texture-3.jpg"), rgb(0,0,0);
     position: absolute;
     top: 15%;
     left: 5%;

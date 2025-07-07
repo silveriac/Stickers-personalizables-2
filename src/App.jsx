@@ -10,22 +10,31 @@ let glasses = data.Lentes.find(obj => obj.alt === params.get("glasses"));
 let other1 = data.Otro1.find(obj => obj.alt === params.get("other1"));
 let other2 = data.Otro2.find(obj => obj.alt === params.get("other2"));
 
-console.log(character, hat, glasses, other1, other2);
 
 const share = (item) => {
     let link = "https://silveriac.github.io/Stickers-personalizables-2/?";
-    console.log(item.Personaje);
     link += "character=" + item.Personaje.alt;
     link += item.Gorro ? "&hat=" + item.Gorro.alt : "";
     link += item.Lentes ? "&glasses=" + item.Lentes.alt : "";
     link += item.Otro1 ? "&other1=" + item.Otro1.alt : "";
     link += item.Otro2 ? "&other2=" + item.Otro2.alt : "";
     navigator.clipboard.writeText(link)
-    console.log(link);
+}
+
+function Alert({setVisibility}){
+    setTimeout(() =>{
+        setVisibility(false)
+    },2400)
+    return(
+        <div className='alerta-copiado'>
+            <p>&nbsp;&nbsp;Enlace copiado!</p>
+        </div>
+    )
 }
 
 function Design({showcaseImg, generateRandom}){
     const [isVisibleAlert, setVisibilityAlert] = useState(false);
+
     return(
         <div id="Design" className={"showcase " + showcaseImg.Personaje.name}>
             <div onClick={() => {generateRandom()}} id="random" className='icon'>
@@ -44,17 +53,6 @@ function Design({showcaseImg, generateRandom}){
                     src="./assets/share.png" alt="share" />
             </div>
             {isVisibleAlert && <Alert setVisibility={setVisibilityAlert}/>}
-        </div>
-    )
-}
-
-function Alert({setVisibility}){
-    setTimeout(() =>{
-        setVisibility(false)
-    },2400)
-    return(
-        <div className='alerta-copiado'>
-            <p>&nbsp;&nbsp;Enlace copiado!</p>
         </div>
     )
 }
@@ -79,7 +77,7 @@ function Modal({category, setShowcaseImg, setActiveModal}) {
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
-                setActiveModal(null); // Call your close function
+                setActiveModal(null);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -97,7 +95,6 @@ function Modal({category, setShowcaseImg, setActiveModal}) {
                 <div className='none'>
                     <img onClick={() => {
                         setActiveModal(null);
-                        console.log(setShowcaseImg);
                         setShowcaseImg([category], null)
                     }}
                     src="./assets/none.png"
@@ -118,8 +115,10 @@ function Preview({image, category, handleSelect, setActiveModal}) {
                 handleSelect(category, image);
                 setActiveModal(null)}
             }
-            className='miniature preview'
-        >
+            className='miniature preview'>
+            <span className='preview-tooltip'>
+                <p>{image.name}</p>
+            </span>
             <img src={`./assets/${category.replace(/\d+/g, '')}/${image.src}`} alt={image.alt} />
         </div>
     )
@@ -130,7 +129,7 @@ function ModalSelector({category, showcaseImg, setActiveModal}) {
         Personaje: data.Personaje[0],
         Gorro: data.Gorro[0],
         Lentes: data.Lentes[0],
-        Otro1: data.Otro1[0],
+        Otro1: data.Otro1[3],
         Otro2: data.Otro2[0],
     }); //use this to have a fallback when showCaseImg[category] is null
     items.current = showcaseImg[category] ? showcaseImg : items.current;
