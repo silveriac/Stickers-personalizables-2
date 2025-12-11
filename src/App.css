@@ -80,6 +80,14 @@ p{
     margin: auto;
 }
 #Design{
+    position: relative;
+    transform: scale(1.7);
+    top: 700px; /*ESTAS TRES LINEAS SE PUEDEN BORRAR MAYBE*/
+    height: 85%;
+    width: 100%;
+    overflow: hidden;
+    /* position: relative;
+    top:200px;
     height: 85%;
     width: 100%;
     overflow: hidden;
@@ -291,9 +299,12 @@ p{
     height: fit-content;
     width: fit-content;
 }
+.modal-viewer > div > img{
+    object-fit: cover;
+    object-position: center;
+}
 .modal-viewer > div:hover > img:not(:first-child){
     transform: translateX(-5%);
-
 }
 .preview-tooltip{
     visibility: hidden;
@@ -305,10 +316,11 @@ p{
     font-size: 10px;
     margin: auto;
     width: fit-content;
-    background: url("assets/sticky-amarillo.png");
+    background: url("./sticky-amarillo.png");
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: 40% 50%;
+    text-transform: capitalize;
 }
 div:hover > .preview-tooltip{
     visibility: visible;
@@ -329,6 +341,9 @@ div:hover > .preview-tooltip{
         scale: 1.7;
         translate: 15px -50px;
         transform-origin: center;
+    }
+    img:is([alt*="misc"]){
+        translate: 15px 0 !important;
     }
 }
 
@@ -369,6 +384,28 @@ div:hover > .preview-tooltip{
     left: -14.2%;
     top: -10%;
 }
+.Skulliver #mainOtro1:is(.septum), .Skulliver #mainOtro2:is(.septum){
+    left: -19.2%;
+    top: -9%;
+}
+.Skulliver #mainOtro1:is(.cora), .Skulliver #mainOtro2:is(.cora), .Skulliver #mainOtro1:is(.estrella), .Skulliver #mainOtro2:is(.estrella){
+    left: -7%;
+    top: -12%;
+}
+.Skulliver #mainOtro1:is(.rayo), .Skulliver #mainOtro2:is(.rayo){
+    left: -12.7%;
+    top: -9.7%;
+}
+.Skulliver #mainOtro1:is(.ceja), .Skulliver #mainOtro2:is(.ceja){
+    left: -12%;
+    top: -18%;
+    rotate: -15deg;
+}
+.Skulliver #mainOtro1:is(.pinchito), .Skulliver #mainOtro2:is(.pinchito){
+    left: -18.5%;
+    top: 1%;
+}
+
 
 /*TERRY*/
 
@@ -408,6 +445,27 @@ div:hover > .preview-tooltip{
 .Terry #mainOtro1:is(.nariz), .Terry #mainOtro2:is(.nariz){
     left: -14%;
     top:-12%;
+}
+.Terry #mainOtro1:is(.septum), .Terry #mainOtro2:is(.septum){
+    left: -21.5%;
+    top: -12%;
+}
+.Terry #mainOtro1:is(.cora), .Terry #mainOtro2:is(.cora), .Terry #mainOtro1:is(.estrella), .Terry #mainOtro2:is(.estrella){
+    left: -5%;
+    top: -12%;
+}
+.Terry #mainOtro1:is(.rayo), .Terry #mainOtro2:is(.rayo){
+    left: -10%;
+    top: -12.2%;
+}
+.Terry #mainOtro1:is(.ceja), .Terry #mainOtro2:is(.ceja){
+    left: -9%;
+    top: -19%;
+    rotate: -15deg;
+}
+.Terry #mainOtro1:is(.pinchito), .Terry #mainOtro2:is(.pinchito){
+    left: -22%;
+    top: -2%;
 }
 
 /*ALLEN*/
@@ -449,6 +507,28 @@ div:hover > .preview-tooltip{
 .Allen #mainOtro1:is(.labios), .Allen #mainOtro2:is(.labios){
     top: -10%;
 }
+.Allen #mainOtro1:is(.septum), .Allen #mainOtro2:is(.septum){
+    left: -23.5%;
+    top: -7.4%;
+}
+.Allen #mainOtro1:is(.cora), .Allen #mainOtro2:is(.cora), .Allen #mainOtro1:is(.estrella), .Allen #mainOtro2:is(.estrella){
+    left: -10%;
+    top: -8%;
+}
+.Allen #mainOtro1:is(.rayo), .Allen #mainOtro2:is(.rayo){
+    left: -17.5%;
+    top: -7.5%;
+    rotate: -10deg;
+}
+.Allen #mainOtro1:is(.ceja), .Allen #mainOtro2:is(.ceja){
+    left: -14%;
+    top: -16%;
+    rotate: -15deg;
+}
+.Allen #mainOtro1:is(.pinchito), .Allen #mainOtro2:is(.pinchito){
+    left: -22%;
+    top: -2%;
+}
 
 /*BUMI*/
 
@@ -485,6 +565,28 @@ div:hover > .preview-tooltip{
     top:-11%;
     z-index: 0;
 }
+.Bumi #mainOtro1:is(.septum), .Bumi #mainOtro2:is(.septum){
+    left: -21%;
+    top: -8.7%;
+}
+.Bumi #mainOtro1:is(.cora), .Bumi #mainOtro2:is(.cora), .Bumi #mainOtro1:is(.estrella), .Bumi #mainOtro2:is(.estrella){
+    left: -0%;
+    top: -11%;
+}
+.Bumi #mainOtro1:is(.rayo), .Bumi #mainOtro2:is(.rayo){
+    left: -9.6%;
+    top: -11.2%;
+}
+.Bumi #mainOtro1:is(.ceja), .Bumi #mainOtro2:is(.ceja){
+    left: -9.5%;
+    top: -18%;
+    rotate: -15deg;
+}
+.Bumi #mainOtro1:is(.pinchito), .Bumi #mainOtro2:is(.pinchito){
+    left: -10%;
+    top: 5%;
+    rotate: -165deg;
+}
 
 /*CATHERINE*/
 
@@ -517,6 +619,27 @@ div:hover > .preview-tooltip{
 }
 .Catherine #mainOtro1:is(.chiva), .Catherine #mainOtro2:is(.chiva){
     top: -11.5%;
+}
+.Catherine #mainOtro1:is(.septum), .Catherine #mainOtro2:is(.septum){
+    left: -20.6%;
+    top: -8.5%;
+}
+.Catherine #mainOtro1:is(.cora), .Catherine #mainOtro2:is(.cora), .Catherine #mainOtro1:is(.estrella), .Catherine #mainOtro2:is(.estrella){
+    left: -4%;
+    top: -10%;
+}
+.Catherine #mainOtro1:is(.rayo), .Catherine #mainOtro2:is(.rayo){
+    left: -10.2%;
+    top: -10.2%;
+}
+.Catherine #mainOtro1:is(.ceja), .Catherine #mainOtro2:is(.ceja){
+    left: -8%;
+    top: -17%;
+    rotate: -15deg;
+}
+.Catherine #mainOtro1:is(.pinchito), .Catherine #mainOtro2:is(.pinchito){
+    left: -20.5%;
+    top: -1%;
 }
 
 /*DON*/
@@ -555,6 +678,27 @@ div:hover > .preview-tooltip{
 .Don #mainOtro1:is(.nariz), .Don #mainOtro2:is(.nariz){
     top: -9%;
 }
+.Don #mainOtro1:is(.septum), .Don #mainOtro2:is(.septum){
+    left: -22%;
+    top: -6%;
+}
+.Don #mainOtro1:is(.cora), .Don #mainOtro2:is(.cora), .Don #mainOtro1:is(.estrella), .Don #mainOtro2:is(.estrella){
+    left: -8%;
+    top: -9%;
+}
+.Don #mainOtro1:is(.rayo), .Don #mainOtro2:is(.rayo){
+    left: -11%;
+    top: -11%;
+}
+.Don #mainOtro1:is(.ceja), .Don #mainOtro2:is(.ceja){
+    left: -11.5%;
+    top: -18%;
+    rotate: -15deg;
+}
+.Don #mainOtro1:is(.pinchito), .Don #mainOtro2:is(.pinchito){
+    left: -22%;
+    top: 2%;
+}
 
 /*HORACIO*/
 
@@ -590,6 +734,28 @@ div:hover > .preview-tooltip{
 .Horacio #mainOtro1:is(.nariz), .Horacio #mainOtro2:is(.nariz){
     left: -11%;
     top: -8.5%;
+}
+.Horacio #mainOtro1:is(.septum), .Horacio #mainOtro2:is(.septum){
+    left: -35%;
+    top: 4%;
+    rotate: -100deg;
+}
+.Horacio #mainOtro1:is(.cora), .Horacio #mainOtro2:is(.cora), .Horacio #mainOtro1:is(.estrella), .Horacio #mainOtro2:is(.estrella){
+    left: -3%;
+    top: -10%;
+}
+.Horacio #mainOtro1:is(.rayo), .Horacio #mainOtro2:is(.rayo){
+    left: -9.2%;
+    top: -9.2%;
+}
+.Horacio #mainOtro1:is(.ceja), .Horacio #mainOtro2:is(.ceja){
+    left: -8.5%;
+    top: -16%;
+    rotate: -15deg;
+}
+.Horacio #mainOtro1:is(.pinchito), .Horacio #mainOtro2:is(.pinchito){
+    left: -18%;
+    top: -2%;
 }
 
 /*ROBBERTO*/
@@ -627,6 +793,27 @@ div:hover > .preview-tooltip{
 .Robberto #mainOtro1:is(.chiva), .Robberto #mainOtro2:is(.chiva){
     left: -15.2%;
     top: -8.2%;
+}
+.Robberto #mainOtro1:is(.septum), .Robberto #mainOtro2:is(.septum){
+    left: -20%;
+    top: -11%;
+}
+.Robberto #mainOtro1:is(.cora), .Robberto #mainOtro2:is(.cora), .Robberto #mainOtro1:is(.estrella), .Robberto #mainOtro2:is(.estrella){
+    left: -20%;
+    top: -4%;
+}
+.Robberto #mainOtro1:is(.rayo), .Robberto #mainOtro2:is(.rayo){
+    left: -11%;
+    top: -8.6%;
+}
+.Robberto #mainOtro1:is(.ceja), .Robberto #mainOtro2:is(.ceja){
+    left: -11%;
+    top: -18%;
+    rotate: -20deg;
+}
+.Robberto #mainOtro1:is(.pinchito), .Robberto #mainOtro2:is(.pinchito){
+    left: -20%;
+    top: -1%;
 }
 
 /*JACKSON*/
@@ -667,4 +854,25 @@ div:hover > .preview-tooltip{
 }
 .Jackson #mainOtro1:is(.monio), .Jackson #mainOtro2:is(.monio){
     left: -15.5%;
+}
+.Jackson #mainOtro1:is(.septum), .Jackson #mainOtro2:is(.septum){
+    left: -18.9%;
+    top: -11.3%;
+}
+.Jackson #mainOtro1:is(.cora), .Jackson #mainOtro2:is(.cora), .Jackson #mainOtro1:is(.estrella), .Jackson #mainOtro2:is(.estrella){
+    left: -5%;
+    top: -14%;
+}
+.Jackson #mainOtro1:is(.rayo), .Jackson #mainOtro2:is(.rayo){
+    left: -18.5%;
+    top: -19%;
+}
+.Jackson #mainOtro1:is(.ceja), .Jackson #mainOtro2:is(.ceja){
+    left: -10.5%;
+    top: -18%;
+    rotate: -15deg;
+}
+.Jackson #mainOtro1:is(.pinchito), .Jackson #mainOtro2:is(.pinchito){
+    left: -19%;
+    top: -3%;
 }

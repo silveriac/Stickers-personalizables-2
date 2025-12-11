@@ -73,18 +73,38 @@
         {"src": "monio-rojo.png", "name": "moño rojo", "alt": "monio-rojo"},
         {"src": "monio-rosa.png", "name": "moño rosa", "alt": "monio-rosa"},
         {"src": "lips-red.png", "name": "labios rojos", "alt": "lips-red"},
-        {"src": "lips-black.png", "name": "labios negros", "alt": "lips-black"}
+        {"src": "lips-black.png", "name": "labios negros", "alt": "lips-black"},
+        {"src": "heart.png", "name": "cora", "alt": "red-heart-misc"},
+        {"src": "heart-black.png", "name": "cora tatuaje", "alt": "black-heart-misc"},
+        {"src": "rayo.png", "name": "rayo", "alt": "lightning-tattoo-misc"},
+        {"src": "rayo-black.png", "name": "rayo tatuaje", "alt": "lightning-tattoo-misc"},
+        {"src": "star.png", "name": "estrella", "alt": "star-misc"},
+        {"src": "star-black.png", "name": "estrella tatuaje", "alt": "star-tattoo-misc"},
+        {"src": "septum.png", "name": "septum", "alt": "septum-misc"},
+        {"src": "piercing-ceja.png", "name": "piercing de ceja", "alt": "piercing-ceja-misc"},
+        {"src": "pinchito.png", "name": "pinchito", "alt": "pinchito-misc"}
+
     ],
     "Otro2": [
         {"src": "chiva-marron.png", "name": "chiva marron", "alt": "chiva-marron"},
         {"src": "chiva-negra.png", "name": "chiva negra", "alt": "chiva-negra"},
         {"src": "mostacho-marron.png", "name": "mostacho marron", "alt": "mostacho-marron"},
         {"src": "mostacho-negro.png", "name": "mostacho negro", "alt": "mostacho-negro"},
-        {"src": "nariz-payaso.png", "name": "nariz payaso", "alt": "nariz-payaso"},
+        {"src": "nariz-payaso.png", "name": "nariz de payaso", "alt": "nariz-payaso"},
         {"src": "monio-azul.png", "name": "moño azul", "alt": "monio-azul"},
         {"src": "monio-rojo.png", "name": "moño rojo", "alt": "monio-rojo"},
         {"src": "monio-rosa.png", "name": "moño rosa", "alt": "monio-rosa"},
         {"src": "lips-red.png", "name": "labios rojos", "alt": "lips-red"},
-        {"src": "lips-black.png", "name": "labios negros", "alt": "lips-black"}
+        {"src": "lips-black.png", "name": "labios negros", "alt": "lips-black"},
+        {"src": "heart.png", "name": "cora", "alt": "red-heart-misc"},
+        {"src": "heart-black.png", "name": "cora tatuaje", "alt": "black-heart-misc"},
+        {"src": "rayo.png", "name": "rayo", "alt": "lightning-tattoo-misc"},
+        {"src": "rayo-black.png", "name": "rayo tatuaje", "alt": "lightning-tattoo-misc"},
+        {"src": "star.png", "name": "estrella", "alt": "star-misc"},
+        {"src": "star-black.png", "name": "estrella tatuaje", "alt": "star-tattoo-misc"},
+        {"src": "septum.png", "name": "septum", "alt": "septum-misc"},
+        {"src": "piercing-ceja.png", "name": "piercing de ceja", "alt": "piercing-ceja-misc"},
+        {"src": "pinchito.png", "name": "pinchito", "alt": "pinchito-misc"}
+
     ]
 }
